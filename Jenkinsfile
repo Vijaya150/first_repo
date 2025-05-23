@@ -1,22 +1,19 @@
 pipeline {
-    agent testlabel
-
+    agent { label 'testlabel' }
     stages {
         stage('Build') {
             steps {
-                sh 'Build success'
+                echo 'Building...'
             }
         }
-
         stage('Test') {
             steps {
-                sh 'test suceess'
+                echo 'Testing...'
             }
         }
-
         stage('Deploy') {
             steps {
-                sh 'Deploy success'
+                echo 'Deploying...'
             }
         }
     }
