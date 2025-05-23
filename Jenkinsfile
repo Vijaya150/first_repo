@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // steps go here
+                sh 'Build success'
             }
         }
 
         stage('Test') {
             steps {
-                // steps go here
+                sh 'test suceess'
             }
         }
 
         stage('Deploy') {
             steps {
-                // steps go here
+                sh 'Deploy success'
             }
         }
     }
