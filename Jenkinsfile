@@ -7,8 +7,22 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing...'
+            parallel {
+                stage('Unit Tests') {
+                    steps {
+                        echo 'Running Unit Tests...'
+                    }
+                }
+                stage('Integration Tests') {
+                    steps {
+                        echo 'Running Integration Tests...'
+                    }
+                }
+                stage('Security Tests') {
+                    steps {
+                        echo 'Running Security Tests...'
+                    }
+                }
             }
         }
         stage('Deploy') {
