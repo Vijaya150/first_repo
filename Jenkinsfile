@@ -1,6 +1,12 @@
 pipeline {
-    agent { label 'testlabel' }
+    agent any
     stages {
+
+        stage('Print Parameter'){
+            steps{
+                echo "User accepted branch: ${params.Branch_name}"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building...'
